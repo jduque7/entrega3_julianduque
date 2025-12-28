@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyería Duque | Exclusividad en Oro</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-oro: #D4AF37;      
+            --color-oro-brillo: #f3e5ab; 
+            --negro-fondo: #0a0a0a;     
+            --gris-oscuro: #1a1a1a;     
+            --texto-claro: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--negro-fondo);
+            color: var(--texto-claro);
+            font-family: 'Playfair Display', 'Segoe UI', serif; 
+        }
+
+       
+        .navbar {
+            background-color: black !important;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+        .navbar-brand {
+            color: var(--color-oro) !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .nav-link {
+            color: white !important;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: var(--color-oro) !important;
+        }
+
+        
+        .btn-gold {
+            background-color: var(--color-oro);
+            color: black;
+            border: none;
+            font-weight: 700;
+            padding: 12px 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 0; 
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            background-color: var(--color-oro-brillo);
+            color: black;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        
+        .card-custom {
+            background-color: var(--gris-oscuro);
+            border: 1px solid #333;
+            transition: transform 0.3s;
+        }
+        .card-custom:hover {
+            border-color: var(--color-oro);
+            transform: translateY(-5px);
+        }
+
+        
+        footer {
+            background-color: black;
+            border-top: 1px solid #222;
+            color: gray;
+            padding: 50px 0;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">JDuque</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
+    
+    <li class="nav-item"><a class="nav-link" href="{% url 'agregar_categoria' %}">Categorías</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'agregar_material' %}">Materiales</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'agregar_joya' %}">Joyas</a></li>
+    
+   <li class="nav-item"><a class="nav-link" href="{% url 'buscar' %}" style="color: var(--color-oro) !important;">Buscar</a></li>
+</ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="min-height: 80vh;">
+        {% block contenido %}
+        {% endblock %}
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            <h4 style="color: var(--color-oro);">Joyería JDuque</h4>
+            <p class="small">Excelencia y tradición en orfebrería.</p>
+            <p class="mt-4">&copy; 2025 Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

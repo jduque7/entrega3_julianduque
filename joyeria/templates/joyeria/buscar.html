@@ -1,0 +1,58 @@
+{% extends 'joyeria/base.html' %}
+
+{% block contenido %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            
+            <h2 class="mb-4" style="color: var(--color-oro);">Buscar en el Catálogo</h2>
+            
+            <form action="" method="GET" class="d-flex gap-2">
+                <input class="form-control form-control-lg" type="search" name="q" placeholder="Ej: Anillo de diamantes..." aria-label="Search" value="{{ query }}" style="background-color: #222; color: white; border: 1px solid #444;">
+                <button class="btn btn-gold" type="submit">BUSCAR</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-10 mx-auto">
+            {% if query %}
+                <h4 class="text-white mb-3">Resultados para: <span class="text-secondary">"{{ query }}"</span></h4>
+                
+                {% if data %}
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover align-middle">
+                            <thead>
+                                <tr>
+                                    <th style="color: var(--color-oro);">Nombre</th>
+                                    <th style="color: var(--color-oro);">Precio</th>
+                                    <th style="color: var(--color-oro);">Stock</th>
+                                    <th style="color: var(--color-oro);">Detalle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for joya in data %}
+                                <tr>
+                                    <td class="fw-bold">{{ joya.nombre }}</td>
+                                    <td>${{ joya.precio }}</td>
+                                    <td>{{ joya.stock }} un.</td>
+                                    <td>{{ joya.descripcion_corta|default:"Sin descripción" }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="alert alert-warning text-center" role="alert">
+                        No encontramos joyas con ese nombre. ¡Intenta con otra palabra!
+                    </div>
+                {% endif %}
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

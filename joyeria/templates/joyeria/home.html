@@ -1,0 +1,82 @@
+{% extends 'joyeria/base.html' %}
+
+{% block contenido %}
+
+<section style="
+    position: relative;
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)), 
+    url('https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=1920&auto=format&fit=crop'); 
+    background-size: cover; 
+    background-position: center;
+    height: 85vh; /* Ocupa casi toda la pantalla */
+    display: flex;
+    align-items: center;
+">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h5 class="text-uppercase mb-3" style="letter-spacing: 3px; color: #aaa;">Colección 2025</h5>
+                <h1 class="display-2 fw-bold mb-4" style="color: var(--color-oro); text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">
+                    LUJO ETERNO
+                </h1>
+                <p class="lead text-white mb-5" style="max-width: 500px; text-shadow: 1px 1px 2px black;">
+                    Descubre la perfección en cada gramo. Piezas únicas forjadas en oro de 18k y 24k para quienes exigen lo mejor.
+                </p>
+                <a href="#" class="btn btn-gold shadow-lg">Ver Catálogo Exclusivo</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container" style="margin-top: -50px; position: relative; z-index: 10;">
+    <div class="row g-4">
+        
+        <div class="col-md-4">
+            <div class="card card-custom h-100 p-4 text-center shadow">
+                <div class="card-body">
+                    <h2 class="display-6" style="color: var(--color-oro);">Categorías</h2>
+                    <hr style="border-color: #444;">
+                    <p class="card-text text-secondary mb-4">Administra los tipos de piezas: Anillos, Gargantillas, Pulseras.</p>
+                    <a href="#" class="btn btn-outline-light btn-sm px-4">Gestionar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-custom h-100 p-4 text-center shadow">
+                <div class="card-body">
+                    <h2 class="display-6" style="color: var(--color-oro);">Materiales</h2>
+                    <hr style="border-color: #444;">
+                    <p class="card-text text-secondary mb-4">Controla tus insumos: Oro 18k, Oro Blanco, Plata Italiana.</p>
+                    <a href="#" class="btn btn-outline-light btn-sm px-4">Gestionar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card card-custom h-100 p-4 text-center shadow">
+                <div class="card-body">
+                    <h2 class="display-6" style="color: var(--color-oro);">Joyas</h2>
+                    <hr style="border-color: #444;">
+                    <p class="card-text text-secondary mb-4">El inventario final. Piezas listas con precio, peso y stock.</p>
+                    <a href="#" class="btn btn-outline-light btn-sm px-4">Gestionar</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<section class="container py-5 mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h3 style="color: white;">La pureza del detalle</h3>
+            <p class="text-secondary">Cada pieza es inspeccionada meticulosamente para asegurar su peso y calidad.</p>
+        </div>
+        <div class="col-md-6 text-end">
+            <span style="font-size: 4rem; color: #222;">💎</span>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
